@@ -12,6 +12,8 @@ namespace BabySitterCalculator
         public static readonly int END_TIME = 4;
         public static readonly int DEFAULT_BED_TIME = 21;
 
+        private static readonly int REGULAR_RATE = 12;
+
         private int startTime;
         private int endTime;
         private int bedTime;
@@ -39,7 +41,7 @@ namespace BabySitterCalculator
         }
         public int PaymentCalculator()
         {
-            return 36;
+            return (REGULAR_RATE) * (startTime - endTime);
         }
 
         private int AdjustTimeIn24HoursFormat(int hour)
