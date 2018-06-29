@@ -42,7 +42,7 @@
       Run the tests in the BabySitterUnitTests project. Shortcut key CTRL+R, A.
   </li>
     <li>
-      The test project has 15 tests.
+      The test project has 16 tests.
   </li>
 </ol>
 
