@@ -41,7 +41,7 @@ namespace BabySitterCalculator
         }
         public int PaymentCalculator()
         {
-            return (REGULAR_RATE) * (endTime - startTime);
+            return (REGULAR_RATE) * GetHoursTillBedTime();
         }
 
         private int AdjustTimeIn24HoursFormat(int hour)
@@ -64,5 +64,12 @@ namespace BabySitterCalculator
                 throw new ArgumentOutOfRangeException();
             }
         }
+
+        private int GetHoursTillBedTime()
+        {
+            return endTime < bedTime ? (endTime - startTime) : (bedTime - startTime);
+        }
+
+        
     } 
 }
