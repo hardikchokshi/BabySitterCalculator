@@ -76,6 +76,11 @@ namespace BabySitterCalculator
             {
                 return endTime - startTime;
             }
+            if(startTime > bedTime)
+            {
+                //return startTime - bedTime;
+                return 0;
+            }
 
             return bedTime - startTime;
         }
@@ -90,13 +95,28 @@ namespace BabySitterCalculator
             {
                 return endTime - bedTime;
             }
+            if(startTime > bedTime)
+            {
+                return 24 - startTime;
+            }
 
             return 24 - bedTime;
         }
 
         private int GetHoursAfterMidnightToEnd()
         {
-            return (endTime <= 24) ? 0 : (endTime - 24);
+            if(endTime <= 24)
+            {
+                return 0;
+            }
+            if(startTime > 24)
+            {
+                return (24- startTime) + (endTime - 24);
+            }
+            else
+            {
+                return endTime - 24;
+            }
 
         }
 
