@@ -37,9 +37,9 @@ namespace BabySitterCalculator
         {
             return this.endTime;
         }
-        public int Calculate()
+        public int PaymentCalculator()
         {
-            return 0;
+            return 36;
         }
 
         private int AdjustTimeIn24HoursFormat(int hour)

@@ -16,25 +16,25 @@ namespace BabySitterCalculation.Test
         }
 
         [TestMethod]
-        public void BabySitterCalculatorWhenCalledReturnInt()
+        public void BabySitterPaymentCalculatorWhenCalledReturnInt()
         {
-            Assert.AreEqual(0, babySitter.Calculate());
+            Assert.AreEqual(36, babySitter.PaymentCalculator());
         }
 
         [TestMethod]
-        public void BabySitterWhencCalledStartTimeReturnInt()
+        public void BabySitterGetStartTimeReturnInt()
         {
             Assert.AreEqual(18, babySitter.GetStartTime());
         }
 
         [TestMethod]
-        public void BabySitterWhenCalledBedTimeReturnInt()
+        public void BabySitterGetBedTimeReturnInt()
         {
             Assert.AreEqual(21, babySitter.GetBedTime());
         }
 
         [TestMethod]
-        public void BabySitterWhenCalledEndTimeReturnInt()
+        public void BabySitteGetBedTimeReturnInt()
         {
             Assert.AreEqual(23, babySitter.GetEndTime());
         }
@@ -60,6 +60,13 @@ namespace BabySitterCalculation.Test
         public void BabySitterInvalidEndTimeReturnsArgumentOutOfRangeException()
         {
             BabySitter babySitter = new BabySitter(18, 8, 21);
+        }
+
+        [TestMethod]
+        public void BabySitterPaymentCalculatorForThreeHoursFromValidStartTime()
+        {
+            BabySitter babySitter = new BabySitter(17, 20, 21);
+            Assert.AreEqual(36, babySitter.PaymentCalculator());
         }
     }
 }
