@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BabySitterCalculator
 {
-    public class Class1
+    public class BabySitter
     {
+        public int Calculate()
+        {
+            return 1;
+        }
     }
 }
