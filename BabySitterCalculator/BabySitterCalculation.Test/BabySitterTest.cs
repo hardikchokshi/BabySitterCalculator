@@ -42,10 +42,24 @@ namespace BabySitterCalculation.Test
         [TestMethod]
         public void BabySitterWhenCalledReturnsValidTimeInto24HoursFomrat()
         {
-            BabySitter babySitter = new BabySitter(5,17,21);
-            Assert.AreEqual(5, babySitter.GetStartTime());
-            Assert.AreEqual(17, babySitter.GetEndTime());
+            BabySitter babySitter = new BabySitter(18,26,21);
+            Assert.AreEqual(18, babySitter.GetStartTime());
+            Assert.AreEqual(26, babySitter.GetEndTime());
             Assert.AreEqual(21, babySitter.GetBedTime());
-        }      
+        }   
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void BabySitterInvalidStartTimeReturnArgumentOutOfRangeException()
+        {
+            BabySitter babySitter = new BabySitter(6, 23, 21);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void BabySitterInvalidEndTimeReturnsArgumentOutOfRangeException()
+        {
+            BabySitter babySitter = new BabySitter(18, 8, 21);
+        }
     }
 }
