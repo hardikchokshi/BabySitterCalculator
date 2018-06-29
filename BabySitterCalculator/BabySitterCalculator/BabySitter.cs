@@ -8,9 +8,15 @@ namespace BabySitterCalculator
 {
     public class BabySitter
     {
+        private int startTime;
+
+        public BabySitter(int startTime)
+        {
+            this.startTime = this.AdjustTimeIn24HoursFormat(startTime);
+        }
         public int GetStartTime()
         {
-            return 1;
+            return this.startTime;
         }
 
         public int GetBedTime()
@@ -22,9 +28,18 @@ namespace BabySitterCalculator
         {
             return 3;
         }
-        public int Calculate(int startTime, int endTime , int bedTime)
+        public int Calculate()
         {
-            return startTime * endTime * bedTime;
+            return 0;
         }
-    }
+
+        private int AdjustTimeIn24HoursFormat(int hour)
+        {
+            if (hour >= 0 && hour <= 4)
+            {
+                hour += 24;
+            }
+            return hour;
+        }
+    } 
 }
