@@ -12,7 +12,7 @@ namespace BabySitterCalculation.Test
         [TestInitialize]
         public void Init()
         {
-           babySitter = new BabySitter(18);
+           babySitter = new BabySitter(18,23,21);
         }
 
         [TestMethod]
@@ -30,20 +30,22 @@ namespace BabySitterCalculation.Test
         [TestMethod]
         public void BabySitterWhenCalledBedTimeReturnInt()
         {
-            Assert.AreEqual(2, babySitter.GetBedTime());
+            Assert.AreEqual(21, babySitter.GetBedTime());
         }
 
         [TestMethod]
         public void BabySitterWhenCalledEndTimeReturnInt()
         {
-            Assert.AreEqual(3, babySitter.GetEndTime());
+            Assert.AreEqual(23, babySitter.GetEndTime());
         }
 
         [TestMethod]
-        public void BabySitterWhenCalledReturnsValidStartTimeInto24HoursFomrat()
+        public void BabySitterWhenCalledReturnsValidTimeInto24HoursFomrat()
         {
-            BabySitter babySitter = new BabySitter(5);
+            BabySitter babySitter = new BabySitter(5,17,21);
             Assert.AreEqual(5, babySitter.GetStartTime());
+            Assert.AreEqual(17, babySitter.GetEndTime());
+            Assert.AreEqual(21, babySitter.GetBedTime());
         }      
     }
 }
