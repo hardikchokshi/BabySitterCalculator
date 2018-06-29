@@ -96,5 +96,12 @@ namespace BabySitterCalculation.Test
             BabySitter babySitter = new BabySitter(17, 26, 21);
             Assert.AreEqual(104, babySitter.PaymentCalculator());
         }
+
+       [TestMethod]
+       public void BabySitterPaymentCalculatorFromMidNightToEnd()
+        {
+            BabySitter babySitter = new BabySitter(25, 28, 21);
+            Assert.AreEqual(64, babySitter.PaymentCalculator());
+        }
     }
 }
