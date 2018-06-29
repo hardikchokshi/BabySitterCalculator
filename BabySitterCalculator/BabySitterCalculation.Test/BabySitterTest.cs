@@ -104,16 +104,19 @@ namespace BabySitterCalculation.Test
             Assert.AreEqual(64, babySitter.PaymentCalculator());
         }
 
+        [TestMethod]
         public void BabySitterPaymentCalculatorBetweenMidNightHours()
         {
             BabySitter babySitter = new BabySitter(26, 28, 21);
-            Assert.AreEqual(16, babySitter.PaymentCalculator());
+            Assert.AreEqual(32, babySitter.PaymentCalculator());
         }
 
+        [TestMethod]
         public void BabySitterPaymentCalculatorFromBedTimeToEnd()
         {
             BabySitter babySitter = new BabySitter(21, 28, 21);
             Assert.AreEqual(88, babySitter.PaymentCalculator());
         }
+
     }
 }
