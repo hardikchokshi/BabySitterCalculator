@@ -80,7 +80,13 @@ namespace BabySitterCalculation.Test
         public void BabySitterPaymentCalculatorFromStartTimeToMidNight()
         {
             BabySitter babySitter = new BabySitter(17, 24, 21);
-            Assert.AreNotEqual(48, babySitter.PaymentCalculator());
+            Assert.AreEqual(72, babySitter.PaymentCalculator());
+        }
+
+        public void BabySitterPaymentCalculatorFromBedTimeToMidNight()
+        {
+            BabySitter babySitter = new BabySitter(21, 24, 21);
+            Assert.AreEqual(24, babySitter.PaymentCalculator());
         }
 
         

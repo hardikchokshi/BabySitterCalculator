@@ -13,6 +13,7 @@ namespace BabySitterCalculator
         public static readonly int DEFAULT_BED_TIME = 21;
 
         private static readonly int REGULAR_RATE = 12;
+        private static readonly int AFTERBED_TO_TILL_MIDNIGHT = 8;
 
         private int startTime;
         private int endTime;
@@ -41,7 +42,8 @@ namespace BabySitterCalculator
         }
         public int PaymentCalculator()
         {
-            return (REGULAR_RATE) * GetHoursTillBedTime();
+            return (REGULAR_RATE) * GetHoursTillBedTime()
+                   + (AFTERBED_TO_TILL_MIDNIGHT) * GetHoursAfterBedTimeToMidNight();
         }
 
         private int AdjustTimeIn24HoursFormat(int hour)
@@ -68,6 +70,19 @@ namespace BabySitterCalculator
         private int GetHoursTillBedTime()
         {
             return endTime < bedTime ? (endTime - startTime) : (bedTime - startTime);
+        }
+
+        private int GetHoursAfterBedTimeToMidNight()
+        {
+            if (endTime < bedTime)
+            {
+                return 0;
+            }
+            if (endTime < 24)
+            {
+                return endTime - bedTime;
+            }
+            return 24 - bedTime;
         }
 
         
