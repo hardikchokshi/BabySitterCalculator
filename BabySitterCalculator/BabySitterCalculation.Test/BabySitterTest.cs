@@ -11,7 +11,7 @@ namespace BabySitterCalculation.Test
         public void BabySitterCalculatorWhenCalledReturnInt()
         {
             BabySitter babySitter = new BabySitter();
-            Assert.AreEqual(1, babySitter.Calculate(1, 2, 3));
+            Assert.AreEqual(6, babySitter.Calculate(1, 2, 3));
         }
     }
 }

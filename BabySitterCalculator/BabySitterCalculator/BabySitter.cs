@@ -8,9 +8,9 @@ namespace BabySitterCalculator
 {
     public class BabySitter
     {
-        public int Calculate(int i, int j , int k)
+        public int Calculate(int startTime, int endTime , int bedTime)
         {
-            return i * j * k;
+            return startTime * endTime * bedTime;
         }
     }
 }
