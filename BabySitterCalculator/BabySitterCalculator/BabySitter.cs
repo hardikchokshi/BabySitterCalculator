@@ -41,7 +41,7 @@ namespace BabySitterCalculator
         }
         public int PaymentCalculator()
         {
-            return (REGULAR_RATE) * (startTime - endTime);
+            return (REGULAR_RATE) * (endTime - startTime);
         }
 
         private int AdjustTimeIn24HoursFormat(int hour)
